@@ -1,0 +1,20 @@
+language: ruby
+rvm: 2.4.1
+install:
+  - pip install --user --upgrade pip
+  - pip install --user ruamel.yaml
+script: ./_scripts/cibuild.sh
+branches:
+  only: master
+git:
+  depth: false
+cache:
+  directories:
+    - vendor/bundle
+notifications:
+  email:
+    on_success: always
+    on_failure: always
+#env:
+#global:
+#    - secure: "o5tAMYKR0XamoA8V/w2Bty1F4h80MoRGAv287OtxRd0Xmcq2OO8SR4BUbpYTERNFAzzKiv2GPi91waazPs24hzYOfMzuch4Ld3QVU4WlHIKxZSUQ0YO4x6Th3Z3m7vwjjU0JRWiHYFXLlXflnVRGhZiutdES/rOtzyjP4DlA13smWjxS8IiKByzsZC1IHRjKjRnOB7HBPh+xXIG/PI3jAXQByBj5qsEmflNwvKbSe2JWQifPr7Z209zuEMa198bd0FD88qJagEl1D4h+RNdruiBkA8Rxo7fDHpf2A/t59iEjlpTtDVWSznrmHee2ErrOgsBv3pQn1aCWGFESQipxxTV6Te/9ujgZHSH/B1nTKaFSNnUNoZYVPVgREi4ERTaXewF+l6/+a594VpoXpx6PaoTpOrpv1ytKGpWClRsH4BBWzNgu6i2zjw6pXxVcTtOJ+CLROUyjjTriwZ2M6sIdatycnHxqQiC0mcmqNebAEgeQCGhXc9oJQUbMJS1BYAK49W4ODLN9gWpg3B32qPdB+ITlDV4YX8MW6OTWVJQdboQQ7TXBgO0UXNXZouazg/xvmNMSJW0itqhsUp1wfquC6NQMx48UtD8kUZ9ZFUggpm6lZoa79BcoLdGRtSbfJH/XOEmcKCKzfXD0uus1YPDv8Rf9mGZvcIBsk1+Qxmas0Ac="

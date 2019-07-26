@@ -1,8 +1,8 @@
 #!/bin/bash
 
-FRAMEWORK_REPOS=https://${GH_TOKEN}@github.com/cotes2020/cotes-blog.git
-META_REPOS=https://${GH_TOKEN}@github.com/cotes2020/blog-meta.git
-GH_DEPLOY=https://${GH_TOKEN}@github.com/cotes2020/cotes2020.github.io.git
+FRAMEWORK_REPOS=https://${GITHUB_TOKEN}@github.com/branchang/blog-jeykll.git
+# META_REPOS=https://${GH_TOKEN}@github.com/cotes2020/blog-meta.git
+GH_DEPLOY=https://${GITHUB_TOKEN}@github.com/branchang/branchang.github.io.git
 
 FRAMEWORK_CACHE=../cotes-blog
 META_CACHE=../blog-meta
@@ -26,9 +26,9 @@ init() {
     rm -rf ${FRAMEWORK_CACHE}
   fi
 
-  if [ -d ${META_CACHE} ]; then
-    rm -rf ${META_CACHE}
-  fi
+  #if [ -d ${META_CACHE} ]; then
+    #rm -rf ${META_CACHE}
+  #fi
 }
 
 
@@ -55,9 +55,9 @@ combine() {
   cp -a ${FRAMEWORK_CACHE}/* ./
   echo "[INFO] Combined with framework."
 
-  git clone --depth=1 ${META_REPOS} ${META_CACHE}
-  cp -a ${META_CACHE}/* ./
-  echo "[INFO] Combined with meta-data."
+  #git clone --depth=1 ${META_REPOS} ${META_CACHE}
+  #cp -a ${META_CACHE}/* ./
+  # echo "[INFO] Combined with meta-data."
 }
 
 
