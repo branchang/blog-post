@@ -74,10 +74,12 @@ This is a `sample` to `code hightlight`.
 {% endhighlight %}
 
 ### HTML 2
+{% capture _code %}
 {% highlight html linenos %}
 This is some  text in a paragraph.
 <p>This is some text in a paragraph.</p>
 {% endhighlight %}
+{% endcapture %}{% include fixlinenos.html %}{{ _code }}
 
 
 #### html-linenos
