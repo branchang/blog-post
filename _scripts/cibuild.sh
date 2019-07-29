@@ -41,7 +41,7 @@ combine() {
     "categories"
     "tags"
     "norobots"
-    "assets/img/sample"
+    # "assets/img/sample"
     "_scripts/cibuild.sh")
 
   git clone --depth=1 ${FRAMEWORK_REPOS} ${FRAMEWORK_CACHE}
