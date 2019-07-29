@@ -75,8 +75,8 @@ This is a `sample` to `code hightlight`.
 
 ### HTML 2
 {% highlight html linenos %}
-<p>{% if site.data.showAuthor %}Author:{{ site.data.author }}{% endif %}</p>
-<p>This is some  text in a paragraph.</p>
+{% if site.data.showAuthor %}Author:{{ site.data.author }}{% endif %}
+This is some  text in a paragraph.
 {% endhighlight %}
 
 
