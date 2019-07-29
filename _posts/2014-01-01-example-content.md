@@ -1,7 +1,11 @@
 ---
 layout: post
 title: Example content
-tags: [Example]
+date: 2014-01-01 14:35:00
+categories: [tutorial]
+tags: [markdown]
+comments: true
+toc: true
 ---
 
 
