@@ -102,6 +102,7 @@ celery 配置文件与命令行配置，同样可以传递给flower启动配置�
   修改默认的task格式.需要在flowerconfig.py中定义format_task函数,接受一个task对象,返回修改后的版本.  
   format_task用于过滤敏感信息  
   下面例子显示如何过滤变量与限制输出长度  
+
 ```python 
 from flower.utils.template import humanize
 
@@ -111,6 +112,7 @@ def format_task(task):
     task.result = humanize(task.result, length=20)
     return task
 ```
+
 * inspect_timeout  
   设置worker的超时检查，默认inspect_timeout=10000(ms)
 * keyfile  
@@ -144,11 +146,14 @@ Google flower.views.auth.GoogleAuth2LoginHandler
 GitHub flower.views.auth.GithubLoginHandler
 ```
 
-
-
-
-  
-
-
-
-
+## Tasks filtering 过滤
+* foo  
+  all tasks containing foo in args, kwargs
+* args 
+   find all tasks containing foo in arguments
+* kwargs  
+  find all tasks containing foo=bar keyword
+* result  
+  find all tasks containing foo in result
+* state  
+  FAILURE find all failed tasks
