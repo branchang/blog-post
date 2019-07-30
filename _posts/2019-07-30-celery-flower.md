@@ -76,27 +76,27 @@ $ export FLOWER_BASIC_AUTH=foo:bar
 celery 配置文件与命令行配置，同样可以传递给flower启动配置使用. flower的配置文件会覆盖celery的标准配置.
 [Celery Configuration reference](http://docs.celeryproject.org/en/latest/userguide/configuration.html)
 
-* address 
+* address  
   给定地址运行http server
-* auth 
+* auth  
   开启google openID 认证
-* auto_refresh
+* auto_refresh  
 开启dashboards自动刷新, (by default, auto_refresh=True)
-* basic_auth
+* basic_auth  
   开启http 基础认证，basic_auth是分割类型，username:password
-* broker_api
+* broker_api  
   url of RabbitMQ HTTP API 包括用户认证
-* ca_certs
+* ca_certs  
   ca_certs 证书地址
-* certfile
+* certfile  
   SSL 证书地址
-* conf 
+* conf   
   配置文件路径.(by default, flowerconfig.py)
-* db
+* db  
   持久化模式下的数据库文件.(by default, db=flower)
-* debug 
+* debug  
   开启调试模式
-* enable_events
+* enable_events  
 事件
   
 
