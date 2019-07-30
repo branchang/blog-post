@@ -97,6 +97,7 @@ celery 配置文件与命令行配置，同样可以传递给flower启动配置�
 * debug 
   开启调试模式
 * enable_events
+事件
   
 
 
