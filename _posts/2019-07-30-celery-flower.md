@@ -1,6 +1,6 @@
 ---
 title: flower celery 监控工具
-date: 2019-07-30 11:05:00
+date: 2019-07-29 11:05:00
 categories: [monitor]
 tags: [flower, celery]
 comments: true
