@@ -97,7 +97,56 @@ celery 配置文件与命令行配置，同样可以传递给flower启动配置�
 * debug  
   开启调试模式
 * enable_events  
-事件
+周期性启动Celery events, 通过enable_events控制,默认开启
+* format_task  
+  修改默认的task格式.需要在flowerconfig.py中定义format_task函数,接受一个task对象,返回修改后的版本.  
+  format_task用于过滤敏感信息  
+  下面例子显示如何过滤变量与限制输出长度  
+```python 
+from flower.utils.template import humanize
+
+def format_task(task):
+    task.args = humanize(task.args, length=10)
+    task.kwargs.pop('credit_card_number')
+    task.result = humanize(task.result, length=20)
+    return task
+```
+* inspect_timeout  
+  设置worker的超时检查，默认inspect_timeout=10000(ms)
+* keyfile  
+  SSL key file path
+* max_workers  
+  内存中保留最大worker数目(默认, max_workers=5000)
+* max_tasks  
+  内存中保留最大的task数目（默认，max_tasks=10000）
+* natural_time  
+  显示时间相对刷新时间,默认开启
+* persistent  
+  开启持久化。如果开启持久化会保存当前状态，flower重启后会重新加载，默认False
+* port  
+  端口号，默认:5555
+* xheaders  
+  开启支持x-Real-Ip 与 X-Scheme header, 默认:False
+* tasks_columns  
+  指定/ tasks / page上以逗号分隔的列的列表。 可以使用拖放重新排序页面上的列
+* url_prefix  
+  允许在非根URL上部署Flower
+  For example to access Flower on http://example.com/flower run it with:
+  ```bash 
+  $ flower --url_prefix=flower
+  ```
+* unix_socket  
+  使用 unix socket file
+* auth_provider  
+  设置认证提供
+```bash 
+Google flower.views.auth.GoogleAuth2LoginHandler
+GitHub flower.views.auth.GithubLoginHandler
+```
+
+
+
+
   
 
 
